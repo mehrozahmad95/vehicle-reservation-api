@@ -30,4 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  reservation:
+    time_range_error: "Reservation to_time cannot be greater than from_time"
+    date_range_error: "Reservation date cannot be less than today's date"
+    not_found: "Reservation not found!"
+    delete_data: "Reservation Data deleted successfully!"
+    delete_error: "Unable to delete the data!"

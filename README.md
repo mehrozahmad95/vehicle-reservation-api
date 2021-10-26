@@ -42,23 +42,7 @@ Run the following command:
 
 ### 1. Create Reservation
 
-curl --location --request POST 'http://127.0.0.1:3000/api/v1/reservations' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "res_date": "25-11-2021",
-    "res_from": "16:30",
-    "res_to":   "17:00",
-    "customer": {
-        "customer_id": "AXCAAS"
-    },
-    "vehicle": {
-        "vehicle_id": "LRWAAAS",
-        "car_model": "2009",
-        "car_make": "Honda",
-        "car_color": "grey",
-        "car_name": "Civic"
-    }
-}'
+curl --location --request POST 'http://127.0.0.1:3000/api/v1/reservations' --header 'Content-Type: application/json' --data-raw '{ "res_date": "25-11-2021", "res_from": "16:30", "res_to": "17:00", "customer": { "customer_id": "AXCAASI" }, "vehicle": { "vehicle_id": "LRWAAASA", "car_model": "2009", "car_make": "Honda", "car_color": "grey", "car_name": "Civic" } }'
 
 ### 2. Get All Reservations
 curl --location --request GET 'http://127.0.0.1:3000/api/v1/reservations'
@@ -82,4 +66,4 @@ curl --location --request PUT 'http://127.0.0.1:3000/api/v1/reservations/1' --he
 }'
 
 ### 5. Delete Reservation
-curl --location --request DELETE 'http://127.0.0.1:3003/api/v1/reservations/1'
+curl --location --request DELETE 'http://127.0.0.1:3000/api/v1/reservations/1'

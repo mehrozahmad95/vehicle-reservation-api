@@ -3,17 +3,8 @@ require "rails_helper"
 RSpec.describe 'Reservation API', type: :request do
   # initialize test data 
   let!(:customer) { create(:customer) }
-  let!(:vehicle) { Vehicle.create(vehicle_id: "VEHCL_002",
-                                  car_model: "2020",
-                                  car_name: "Lorem epsum",
-                                  car_make: "ABC",
-                                  car_color: "black",
-                                  customer_id: customer.id) }
-  let!(:reservation) { Reservation.create(customer_id: customer.id,
-                                          vehicle_id: vehicle.id,
-                                          res_date: Date.today,
-                                          res_from: Time.now+2.hours,
-                                          res_to: Time.now+3.hours) }
+  let!(:vehicle) { create(:vehicle, customer: customer) }
+  let!(:reservation) { create(:reservation, customer: customer, vehicle: vehicle) }
   let!(:reservation_id) { reservation.id }
 
   # Test suite for GET /reservations

@@ -8,12 +8,13 @@ class ReservationSerializer < ActiveModel::Serializer
   end
 
   def vehicle
+    customer_vehicle = object.vehicle
     {
-      vehicle_id: object.vehicle.vehicle_id,
-      car_model:  object.vehicle.car_model,
-      car_name:   object.vehicle.car_name,
-      car_make:   object.vehicle.car_make,
-      car_color:  object.vehicle.car_color
+      vehicle_id: customer_vehicle.vehicle_id,
+      car_model:  customer_vehicle.car_model,
+      car_name:   customer_vehicle.car_name,
+      car_make:   customer_vehicle.car_make,
+      car_color:  customer_vehicle.car_color
     }
   end
 end

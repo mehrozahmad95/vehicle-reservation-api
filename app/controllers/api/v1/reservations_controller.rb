@@ -48,7 +48,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.merge!(customer_id: customer_data[:customer_id], vehicle_id: customer_data[:vehicle_id])
-    params.permit([:res_date, :res_from, :res_to, :fulfilled, :customer_id, :vehicle_id])    
+    params.permit([:res_date, :res_from, :res_to, :fulfilled, :customer_id, :vehicle_id])
+          .merge!(customer_id: customer_data[:customer_id], vehicle_id: customer_data[:vehicle_id])
   end
 end
